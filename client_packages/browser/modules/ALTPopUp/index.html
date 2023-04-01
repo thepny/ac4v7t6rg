@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="fonts/font/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/infa.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700" rel="stylesheet">
+	<script src="./js/library/vue.js"></script>
+</head>
+<style>
+	[v-cloak] {
+		display: none;
+	}
+</style>
+<body>
+	<div v-cloak v-if="active" class="main">
+		<div class="center">
+			<!-- <div @click="btn(0)" class="pop1">Слепить снежок</div> -->
+			<div v-if="!boomboxplaced" @click="btn(1)" class="pop1">Поставить бумбокс</div>
+			<div v-if="boomboxplaced" @click="btn(1)" class="pop1">Убрать бумбокс</div>
+			<div v-if="boomboxplaced" @click="btn(2)" class="pop1">Установить музыку</div>
+		</div>
+	</div>
+    <script src="./js/autosale.js"></script>
+	<script src="./js/library/jquery-3.2.1.min.js"></script>
+</body>
+</html>

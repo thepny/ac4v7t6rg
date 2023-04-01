@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a128f511-c2ab-4e08-a7ac-25dc6e5aa4a3": {
+      "ProjectGuid": "a128f511-c2ab-4e08-a7ac-25dc6e5aa4a3",
+      "DisplayName": "Alyx",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

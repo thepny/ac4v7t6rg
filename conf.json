@@ -1,0 +1,14 @@
+{
+	"maxplayers": 500,
+	"name": "PARADINE",
+	"gamemode": "roleplay",
+	"language": "de",
+	"stream-distance": 500.0,
+	"announce": false,
+	"enable-nodejs": false,
+	"csharp": "enabled",
+	"port": 22005,
+	"voice-chat": true,
+	"voice-chat-sample-rate": 48000,
+	"api-threading-debugging": false
+}

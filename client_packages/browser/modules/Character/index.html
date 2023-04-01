@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="fonts/font/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700" rel="stylesheet">
+	<script src="./js/library/vue.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<div @click="random()" class="btnrand"><img src="./img/dice.svg" class="ico"></div>
+		<div @click="dancing()" class="btndance"><img src="./img/dancing.svg" class="ico2"></div>
+		<div class="leftblock">
+			<a>Создание персонажа</a>
+			<input type="text" v-model="age" placeholder="Возраст..." class="inputages" maxlength="3" onkeyup="this.value = this.value.replace (/[^0-9+]/, '')">
+			<div class="alllistcr">
+				<div v-if="pages == 0" class="blockcr active">Наследственность<img src="./img/arrow.png" class="arrow"></div>
+				<div @click="gopage(0)" v-if="pages != 0" class="blockcr">Наследственность<img src="./img/arrow.png" class="arrow"></div>
+				<div v-if="pages == 1" class="blockcr active">Части лица<img src="./img/arrow.png" class="arrow"></div>
+				<div @click="gopage(1)" v-if="pages != 1" class="blockcr">Части лица<img src="./img/arrow.png" class="arrow"></div>
+				<div @click="gopage(2)" v-if="pages == 2" class="blockcr active">Внешний вид<img src="./img/arrow.png" class="arrow"></div>
+				<div @click="gopage(2)" v-if="pages != 2" class="blockcr">Внешний вид<img src="./img/arrow.png" class="arrow"></div>
+				<div @click="gopage(3)" v-if="pages == 3" class="blockcr active">Растительность<img src="./img/arrow.png" class="arrow"></div>
+				<div @click="gopage(3)" v-if="pages != 3" class="blockcr">Растительность<img src="./img/arrow.png" class="arrow"></div>
+				<div @click="gopage(4)" v-if="pages == 4" class="blockcr active">Одежда<img src="./img/arrow.png" class="arrow"></div>
+				<div @click="gopage(4)" v-if="pages != 4" class="blockcr">Одежда<img src="./img/arrow.png" class="arrow"></div>
+			</div>
+			<div @click="save" class="btncreate">Создать персонажа</div>
+			<div class="lineapp"></div>
+		</div>
+		<div class="rightblock">
+			<div v-if="pages == 0">
+				<a>Наследственность</a>
+				<div class="genders">
+					<div @click="genderSw(true)" v-if="gender" class="male active"><img src="./img/male.svg" class="icog"></div>
+					<div @click="genderSw(true)" v-if="!gender" class="male"><img src="./img/male.svg" class="icog"></div>
+					<div @click="genderSw(false)" v-if="gender" class="female"><img src="./img/female.svg" class="icog"></div>
+					<div @click="genderSw(false)" v-if="!gender" class="female active"><img src="./img/female.svg" class="icog"></div>
+				</div>
+				<div class="lineapp2"></div>
+				<div class="fatherblock">
+					<p>Отец</p>
+					<list id="father" num=""></list>
+				</div>
+				<div style="margin-top: 5vw;" class="fatherblock">
+					<p>Мать</p>
+					<list id="mother" num=""></list>
+				</div>
+				<div style="margin-top: 24.5vw;" class="element">
+					<label>Схожесть:</label>
+					<div class="slider">
+						<input id="similar" type="range" value="0.5" step="0.1" min="0" max="1.0">
+					</div>
+					<output id="similar">0.5</output>
+				</div>
+				<div class="element">
+					<label>Цвет кожи:</label>
+					<div class="slider">
+						<input id="skin" type="range" value="0.5" step="0.1" min="0" max="1">
+					</div>
+					<output id="skin">0.5</output>
+				</div>
+			</div>
+			<div v-if="pages == 1">
+				<a>Части лица</a>
+				<div style="top: 3vw;" class="lineapp2"></div>
+				<div class="scrolling">
+					<div class="element">
+						<label>Ширина носа:</label>
+						<div class="slider">
+							<input id="noseWidth" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="noseWidth">0</output>
+					</div>
+					<div class="element">
+						<label>Высота носа:</label>
+						<div class="slider">
+							<input id="noseHeight" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="noseHeight">0</output>
+					</div>
+					<div class="element">
+						<label>Длина кончика носа:</label>
+						<div class="slider">
+						<input id="noseTipLength" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+					<output id="noseTipLength">0</output>
+					</div>
+					<div class="element">
+					<label>Глубина моста носа:</label>
+						<div class="slider">
+							<input id="noseDepth" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="noseDepth">0</output>
+					</div>
+					<div class="element">
+						<label>Высота кончика носа:</label>
+						<div class="slider">
+							<input id="noseTipHeight" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="noseTipHeight">0</output>
+					</div>
+					<div class="element">
+						<label>Поломаность носа:</label>
+						<div class="slider">
+							<input id="noseBroke" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="noseBroke">0</output>
+					</div>
+					<div class="element">
+						<label>Высота бровей:</label>
+						<div class="slider">
+							<input id="eyebrowHeight" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="eyebrowHeight">0</output>
+					</div>
+					<div class="element">
+						<label>Глубина бровей:</label>
+						<div class="slider">
+							<input id="eyebrowDepth" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="eyebrowDepth">0</output>
+					</div>
+					<div class="element">
+						<label>Высота скул:</label>
+						<div class="slider">
+							<input id="cheekboneHeight" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="cheekboneHeight">0</output>
+					</div>
+					<div class="element">
+						<label>Ширина скул:</label>
+						<div class="slider">
+							<input id="cheekboneWidth" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="cheekboneWidth">0</output>
+					</div>
+					<div class="element">
+						<label>Глубина щеки:</label>
+						<div class="slider">
+							<input id="cheekDepth" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="cheekDepth">0</output>
+					</div>
+					<div class="element">
+						<label>Размер глаз:</label>
+						<div class="slider">
+							<input id="eyeScale" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="eyeScale">0</output>
+					</div>
+				</div>
+			</div>
+			<div v-if="pages == 2">
+				<a>Внешний вид</a>
+				<div style="top: 3vw;" class="lineapp2"></div>
+				<div style="margin-top: -7vw;" class="fatherblock">
+					<p>Цвет глаз</p>
+					<list id="eyeColor"></list>
+				</div>
+				<div style="margin-top: 5vw; height: 21vw;" class="scrolling">
+					<div class="element">
+					<label>Толщина губ:</label>
+						<div class="slider">
+							<input id="lipThickness" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="lipThickness">0</output>
+					</div>
+					<div class="element">
+						<label>Ширина челюсти:</label>
+						<div class="slider">
+							<input id="jawWidth" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="jawWidth">0</output>
+					</div>
+					<div class="element">
+						<label>Форма челюсти:</label>
+						<div class="slider">
+							<input id="jawShape" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="jawShape">0</output>
+					</div>
+					<div class="element">
+						<label>Высота подбородка:</label>
+						<div class="slider">
+							<input id="chinHeight" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="chinHeight">0</output>
+					</div>
+					<div class="element">
+						<label>Глубина подбородка:</label>
+						<div class="slider">
+							<input id="chinDepth" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="chinDepth">0</output>
+					</div>
+					<div class="element">
+						<label>Ширина подбородка:</label>
+						<div class="slider">
+							<input id="chinWidth" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="chinWidth">0</output>
+					</div>
+					<div class="element">
+						<label>Подбородочный отступ:</label>
+						<div class="slider">
+							<input id="chinIndent" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="chinIndent">0</output>
+					</div>
+					<div class="element">
+						<label>Обхват шеи:</label>
+						<div class="slider">
+							<input id="neck" type="range" value="0" step="0.1" min="-1" max="1">
+						</div>
+						<output id="neck">0</output>
+					</div>
+				</div>
+			</div>
+			<div v-if="pages == 3">
+				<a>Растительность</a>
+				<div style="top: 3vw;" class="lineapp2"></div>
+				<div style="margin-top: -7vw;" class="fatherblock">
+					<p>Волосы</p>
+					<list id="hairM" v-if="gender"></list>
+					<list id="hairF" v-if="!gender"></list>
+				</div>
+				<div style="margin-top: -2vw;" class="fatherblock">
+					<p>Брови</p>
+					<list id="eyebrowsM" v-if="gender"></list>
+					<list id="eyebrowsF" v-if="!gender"></list>
+				</div>
+				<div style="margin-top: 3vw;" class="fatherblock">
+					<p>Цвет волос</p>
+					<list id="hairColor"></list>
+				</div>
+				<div v-if="gender" style="margin-top: 8vw;" class="fatherblock">
+					<p>Борода</p>
+					<list id="beard"></list>
+				</div>
+			</div>
+			<div v-if="pages == 4">
+				<a>Одежда</a>
+				<div style="top: 3vw;" class="lineapp2"></div>
+				<div style="margin-top: -7vw;" class="fatherblock">
+					<p>Верхняя одежда</p>
+					<list id="ClothesTop"></list>
+				</div>
+				<div style="margin-top: -2vw;" class="fatherblock">
+					<p>Штаны</p>
+					<list id="ClothesPants"></list>
+				</div>
+				<div style="margin-top: 3vw;" class="fatherblock">
+					<p>Обувь</p>
+					<list id="ClothesShoes"></list>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./js/library/jquery-3.2.1.min.js"></script>
+	<script src="./js/rangeslider.min.js"></script>
+    <script src="./js/character.js"></script>
+</body>
+</html>

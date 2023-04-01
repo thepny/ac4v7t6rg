@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.css"><!--Подключение CSS-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script><!--Подключение VueJS-->
+    <!-- Подключение шрифта -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700" rel="stylesheet">
+    <!--  -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper" v-if="active">
+        <div class="wrapper__block" v-for="kill in kills">
+            <span :class="[kill.frac1]">{{kill.killer}}</span>
+            <img v-if="kill.deadplayerName == 'null'" class="killImg" src="assets/images/kill.png" alt="kill">
+            <img v-else class="gunImg" :src="`assets/images/` + kill.weapon + `.png`" alt="kill">
+            <span v-if="kill.deadplayerName != 'null'" :class="[kill.frac2]">{{kill.deadplayerName }}</span>
+        </div>
+		<!-- <div class="wrapper__block"> -->
+            <!-- <span class="fraction1">Ilya Merumond</span> -->
+            <!-- <img class="killImg" src="assets/images/kill.png" alt="kill"> -->
+            <!-- <span class="fraction2">Ilya merumond</span> -->
+        <!-- </div> -->
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

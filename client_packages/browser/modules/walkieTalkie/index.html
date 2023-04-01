@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link href="http://fonts.cdnfonts.com/css/digital-7-mono" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+	<div class="main" v-if="active">
+		<div class="exit">
+				<a>N</a>ГОВОРИТЬ В РАЦИЮ
+		</div>
+		<input type="text" v-model="inputf" readonly="readonly" maxlength="3">
+		<div id="zeropoint">.</div>
+		<input id="t2" type="text" v-model="inputs" readonly="readonly" maxlength="3">
+		<!-- <input id="t3" type="text" v-model="input" readonly="readonly" maxlength="3"> -->
+		<a v-if="inputf == null">
+			<div class="n1">-</div>
+			<div class="n2">-</div>
+			<div class="n3">-</div>
+		</a>
+		<a v-if="inputf != null">
+			<div v-if="inputf.length < 1" class="n1">-</div>
+			<div v-if="inputf.length < 2" class="n2">-</div>
+			<div v-if="inputf.length < 3" class="n3">-</div>
+		</a>
+		<a v-if="inputs == null">
+			<div class="n4">-</div>
+			<div class="n5">-</div>
+			<div class="n6">-</div>
+		</a>
+		<a v-if="inputs != null">
+			<div v-if="inputs.length < 1" class="n4">-</div>
+			<div v-if="inputs.length < 2" class="n5">-</div>
+			<div v-if="inputs.length < 3" class="n6">-</div>
+		</a>
+		<div @click="inputMinus()" class="btnup"></div>
+		<div @click="inputPlus()" class="btnmin"></div>
+		<div @click="btnvalue(1)" style="margin-top: 1.5vw; margin-left: -5.17vw;" class="btnmin"></div>
+		<div @click="btnvalue(2)" style="margin-top: 1.5vw; margin-left: -2.6vw;" class="btnmin"></div>
+		<div @click="btnvalue(3)" style="margin-top: 1.5vw;" class="btnmin"></div>
+		
+		<div @click="btnvalue(4)" style="margin-top: 3vw; margin-left: -5.17vw;" class="btnmin"></div>
+		<div @click="btnvalue(5)" style="margin-top: 3vw; margin-left: -2.6vw;" class="btnmin"></div>
+		<div @click="btnvalue(0)" style="margin-top: 3vw; margin-left: 2.6vw;" class="btnmin"></div>
+		<div @click="btnvalue(6)" style="margin-top: 3vw;" class="btnmin"></div>
+		
+		<div @click="btnvalue(7)" style="margin-top: 4.5vw; margin-left: -5.17vw;" class="btnmin"></div>
+		<div @click="btnvalue(8)" style="margin-top: 4.5vw; margin-left: -2.6vw;" class="btnmin"></div>
+		<div @click="delvalue()" style="margin-top: 4.5vw; margin-left: 2.6vw;" class="btnmin"></div>
+		<div @click="btnvalue(9)" style="margin-top: 4.5vw;" class="btnmin"></div>
+		
+		<div @click="close()" class="btnexit"></div>
+		<div @click="frequencyChange()" class="btnsucces"></div>
+		<div v-if="voice">
+			<img src="./radio.png" class="img">
+		</div>
+		<div v-if="!voice">
+			<img src="./radiooff.png" class="img">
+		</div>
+	</div>
+    <script src="js/script.js"></script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.core.min.js"></script>
+<script>
+	function playSound(music) {
+		var sound = new Howl({
+			src: ['./sounds/18558_1464791429.mp3'],
+			loop: false,
+			volume: 0.8
+		})
+		switch(music){
+			case "notalking":
+				sound.play()
+			break;
+		}
+	}
+</script>
+</html>

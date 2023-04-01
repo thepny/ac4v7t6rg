@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="fonts/font/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="../../assets/fonts/bebas-neue/stylesheet.css">	
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700" rel="stylesheet">
+	<script src="./js/library/vue.js"></script>
+</head>
+<style>
+	[v-cloak] {
+		display: none;
+	}
+</style>
+<body>
+	<div id="app">
+		<div v-cloak id="housebuy" class="main" v-if="active">
+			<div @click="exit()" class="exit"><img src="close.svg"></div>
+			<a>Дом #{{id}}</a>
+			<div class="blockdown">
+				<div class="textl">Владелец:</div>
+				<div class="textr">{{owner}}</div>
+			</div>
+			<div class="blockdown">
+				<div class="textl">Налог:</div>
+				<div class="textr"><b style="color: #1cca61">$</b> {{(price / 100 * 0.013).toFixed()}} / сутки</div>
+			</div>
+			<div class="blockdown">
+				<div class="textl">Цена:</div>
+				<div class="textr"><b style="color: #1cca61">$</b> {{price | formatThousands}}</div>
+			</div>
+			<div class="blockdown">
+				<div class="textl">Можно подселить:</div>
+				<div class="textr">{{roommates}} человек</div>
+			</div>
+			<div class="blockdown">
+				<div class="textl">Парковочные места:</div>
+				<div class="textr">{{garage}} (1 гараж)</div>
+			</div>
+			<div @click="buy(id)" class="btn">Купить</div>
+			<div @click="int(id)" class="btn2">Посмотреть</div>
+		</div>
+		<div v-cloak id="houseinfo" style="height: 22.3vw;" class="main" v-if="active">
+			<div @click="exit()" class="exit"><img src="close.svg"></div>
+			<a>Дом #{{id}}</a>
+			<div class="blockdown">
+				<div class="textl">Владелец:</div>
+				<div class="textr">{{owner}}</div>
+			</div>
+			<div class="blockdown">
+				<div class="textl">Налог:</div>
+				<div class="textr"><b style="color: #1cca61">$</b> {{(price / 100 * 0.013).toFixed()}} / сутки</div>
+			</div>
+			<div class="blockdown">
+				<div class="textl">Цена:</div>
+				<div class="textr"><b style="color: #1cca61">$</b> {{price | formatThousands}}</div>
+			</div>
+			<div class="blockdown">
+				<div class="textl">Можно подселить:</div>
+				<div class="textr">{{roommates}} человек</div>
+			</div>
+			<div class="blockdown">
+				<div class="textl">Парковочные места:</div>
+				<div class="textr">{{garage}} (1 гараж)</div>
+			</div>
+			<div @click="enter(id)" class="btn">Войти</div>
+			<!-- <div @click="int(id)" class="btn2">Посмотреть</div> -->
+		</div>
+		<div v-cloak id="houseinfo2" style="height: 22.3vw;" class="main" v-if="active">
+			<div @click="exit()" class="exit"><img src="close.svg"></div>
+			<a>Дом #{{id}}</a>
+			<div class="blockdown">
+				<div class="textl">Владелец:</div>
+				<div class="textr">{{owner}}</div>
+			</div>
+			<div class="blockdown">
+				<div class="textl">Налог:</div>
+				<div class="textr"><b style="color: #1cca61">$</b> {{(price / 100 * 0.013).toFixed()}} / сутки</div>
+			</div>
+			<div class="blockdown">
+				<div class="textl">Цена:</div>
+				<div class="textr"><b style="color: #1cca61">$</b> {{price | formatThousands}}</div>
+			</div>
+			<div class="blockdown">
+				<div class="textl">Можно подселить:</div>
+				<div class="textr">{{roommates}} человек</div>
+			</div>
+			<div class="blockdown">
+				<div class="textl">Парковочные места:</div>
+				<div class="textr">{{garage}} (1 гараж)</div>
+			</div>
+			<div @click="enter(id)" class="btn">Войти</div>
+			<!-- <div @click="int(id)" class="btn2">Посмотреть</div> -->
+		</div>
+	</div>
+	<script>Vue.filter('formatThousands', (x) => {return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");})</script>
+	<script src="./js/library/jquery-3.2.1.min.js"></script>
+	<script src="./js/index.js"></script>
+</body>
+</html>

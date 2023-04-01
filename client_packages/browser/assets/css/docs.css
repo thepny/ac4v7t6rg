@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.license{
+    position: absolute;
+    width: 700px;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    margin: -250px 0 0 -350px;
+    background-image: url('../images/menu/documents/lic.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 20px;
+    font-weight: 400;
+}
+.passport{
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    left: 44%;
+    top: 44%;
+    margin: -450px 0 0 -250px;
+    background-image: url('../images/menu/documents/passport.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.passport p{
+    margin: 0;
+    font-size: 12pt;
+    font-weight: 200;
+}
+.license #firstname{
+    margin-left: 300px;
+    margin-top: 220px;
+    font-weight: 600;
+}
+.license #lastname{
+    margin-left: 344px;
+    margin-bottom: 22px;
+}
+.license #date{
+    margin-left: 344px;
+    margin-bottom: 22px;
+}
+.license #gender{
+    margin-left: 300px;
+    margin-bottom: 74px;
+}
+.license #lics{
+    margin-left: 9%;
+    font-size: 14pt;
+}
+.passport #firstname{
+    font-size: 27pt;
+    margin-left: 150px;
+    margin-bottom: -0px;
+    margin-top: -0px;
+    color: white
+}
+.passport #lastname{
+    font-size: 27pt;
+    margin-left: 150px;
+    margin-bottom: 15px;
+    color: white
+    
+}
+.passport #date{
+    margin-left: 150px;
+    margin-bottom: 16px;
+    color: #bfbfbf
+}
+.passport #gender{
+    margin-left: 150px;
+    margin-bottom: 10px;
+    color: #bfbfbf
+}
+.passport #member{
+    margin-left: 245px;
+    margin-bottom: 14px;
+}
+.passport #work{
+    margin-left: 220px;
+}
+.passport #number{
+    font-size: 24pt;
+    margin-top: 270px;
+    margin-bottom: 138px;
+    margin-left: 50px;
+    color: #000000
+}
+.passport #exit,
+.license #exit {
+    float: right;
+    width: 30px;
+    height: 30px;
+    left: 40px;
+    background-color: #EF3B3A;
+    border-radius: 20px;
+    cursor: pointer;
+    background-image: url('../images/icons/exit.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+}
+.passport #exit{margin-top: -300px}

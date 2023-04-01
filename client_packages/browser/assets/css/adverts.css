@@ -1,0 +1,352 @@
+﻿body {
+    font-family: Montserrat;
+	-webkit-user-select: none;
+    color: #fff;
+	overflow: hidden;
+}
+
+.wrapper {
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticketfull {
+    width: 1300px;
+    height: 800px;
+    background: #171624;
+    border-radius: 4px;
+    display: flex;
+}
+
+.imglogo {
+    position: absolute;
+    background: url(../images/img/rd.png);
+    width: 360px;
+    height: 92px;
+    left: 780px;
+    top: 127px;
+}
+
+.swglogo {
+    margin-top: -10px;
+    margin-left: -35px;
+}
+
+#buttonswgclose {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+.buttonone, .buttononek, #buttonclose {
+    cursor: pointer;
+}
+
+button.buttonone:focus {
+    background: #2b2944;
+}
+
+button.buttononek:focus {
+    background: #2b2944;
+}
+
+button:hover svg {
+    transform: scale(1.1);
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+svg {
+    outline: none;
+    transition: transform 0.3s linear;
+}
+
+.ticketinside {
+    width: 1300px;
+    height: 730px;
+    margin-top: 70px;
+    background: #171624;
+    border-radius: 0px 0px 4px 4px;
+    display: flex;
+}
+
+.advert {
+    width: 400px;
+    height: 730px;
+    margin: left;
+    background: #11101b;
+    border-radius: 0px 0px 4px 4px;
+}
+
+    .advert p.adverttext {
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 0 0 2vw #ffffff;
+    }
+
+.oneadvert {
+    width: 400px;
+    height: 100px;
+    background: #11101b;
+    border-radius: 0px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.advertinfo {
+    display: flex;
+    margin-left: 21px;
+}
+
+    .advertinfo p {
+        margin-right: 5px;
+        letter-spacing: 0.03em;
+        font-weight: bold;
+    }
+
+p.tasknumber {
+    color: #BC3A3A;
+}
+
+p.taskuser {
+    color: #ffffff10;
+}
+
+.adverttasks {
+    margin-left: 21px;
+    max-width: 380px;
+    margin-top: -20px;
+}
+
+    .adverttasks p {
+        text-align: left;
+        letter-spacing: 0.03em;
+    }
+
+.adminname {
+    padding-right: 26px;
+}
+
+    .adminname p {
+        color: #BCA73A;
+        font-weight: bold;
+        text-align: right;
+    }
+
+.blockadmins {
+    position: static;
+    margin-top: -107px;
+    margin-left: 391px;
+}
+
+.boxes {
+    height: 633px;
+    width: 400px;
+    overflow: hidden;
+}
+
+.boxadverts {
+    width: 100%;
+    height: 100%;
+    padding: 0 25px 0 0;
+    overflow: auto;
+}
+
+.answer {
+    width: 400px;
+    height: 730px;
+    margin-left: 50px;
+    background: #0b0b11;
+    border-radius: 0px 0px 4px 4px;
+}
+
+    .answer p.adverttext {
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 0 0 2vw #ffffff;
+    }
+
+.answertoquestion {
+    width: 400px;
+    height: 329px;
+    position: absolute;
+    top: 561px;
+    background: #11101b;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.textquestion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user {
+    border: none;
+}
+
+textarea {
+    border-style: none;
+    background: rgba(58, 58, 58, 0.0);
+    width: 370px;
+    height: 234px;
+    resize: none;
+}
+
+    textarea:focus, input:focus {
+        outline: none;
+    }
+
+    textarea.user {
+        color: white;
+    }
+
+.buttonquestion {
+    display: flex;
+}
+
+.buttonone {
+    width: 191px;
+    height: 50px;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    font-family: Montserrat;
+    background: #ffffff10;
+}
+
+.buttonone:hover {
+    width: 191px;
+    height: 50px;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    font-family: Montserrat;
+    background: hsla(0, 0%, 100%, 0.087);
+    
+}
+
+.buttononek {
+    width: 191px;
+    height: 50px;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    font-family: Montserrat;
+    background: #ffffff10;
+}
+
+.butabs {
+    position: absolute;
+    margin-left: 6px;
+    margin-top: -12px;
+}
+
+.butabr {
+    position: absolute;
+    margin-left: 203px;
+    margin-top: -12px;
+}
+
+.template {
+    width: 400px;
+    height: 730px;
+    margin-left: 50px;
+    background: #11101b;
+    border-radius: 0px 0px 4px 4px;
+    position: relative;
+    z-index: 10;
+}
+
+    .template p.adverttext {
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 0 0 1.5vw #ffffff;
+    }
+
+.templ {
+    width: 400px;
+    height: 30px;
+    background: #11101b;
+    border-radius: 0px;
+    margin-bottom: 10px;
+}
+
+.boxestempl {
+    height: 500px;
+    width: 400px;
+    overflow: hidden;
+}
+
+.boxtemplates {
+    width: 100%;
+    height: 100%;
+    padding: 0 25px 0 0;
+    overflow: auto;
+}
+
+.templ {
+    display: flex;
+    align-items: center;
+}
+
+    .templ p {
+        text-align: center;
+    }
+
+.templtext {
+    width: 400px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close p button {
+    width: 30px;
+    height: 30px;
+    background: #A33C3C url(../images/icons/cancel.png) no-repeat;
+    border: none;
+    background-size: 12px 12px;
+    background-position: center;
+    display: none;
+}
+
+#buttonclose:focus {
+    background: rgba(122, 45, 45, 0.9) url(../images/icons/cancel.png) no-repeat;
+    background-size: 12px 12px;
+    background-position: center;
+}
+
+.templ:hover .close p button {
+    display: block;
+}
+
+.texttempl {
+    width: 400px;
+    height: 85px;
+    background: #11101b;
+    border-radius: 0px 0px 4px 4px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+.infotempltxt {
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+    opacity: 0.2;
+}

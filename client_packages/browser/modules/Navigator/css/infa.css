@@ -1,0 +1,153 @@
+body {
+	overflow: hidden;
+	user-select: none;
+	color: #fff;
+	font-family: Montserrat;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+.main {
+	position: absolute;
+	top: 50%;
+	left: 1vw;
+	width: 22vw;
+	zoom: 80%;
+	border-radius: 0.25vw;
+	transform: translate(0,-50%);
+	height: 30vw;
+	background: #191c1f;
+}
+.name {
+	position: absolute;
+	left: 1vw;
+	top: 1vw;
+	font-size: 0.9vw;
+	font-weight: 500;
+}
+.list {
+	width: 20vw;
+	max-width: 20.8vw;
+    margin: auto;
+	/* height: 26vw; */
+	/* background: red; */
+	left: 0.7vw;
+    padding-top: 0.125vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+	position: absolute;
+	/* top: 3.3vw; */
+}
+.list2 {
+	max-width: 20vw; 
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-top: -0.4vw;
+}
+.centrized {
+	position: absolute;
+	width: 21vw;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 26.3vw;
+	top: 2.5vw;
+	/* background: red; */
+}
+.block:hover {
+	background:#6b6bfa;
+}
+.block {
+	width: 6.25vw;
+	height: 6.25vw;
+	transition: background .1s;
+	margin-left: 0.4vw;
+	margin-top: 0.4vw;
+	background: #23272b;
+}
+.block img {
+	position: relative;
+	top: 40%;
+	left: 50%;
+	width: 3vw;
+	transform: translate(-50%,-50%);
+}
+.block a {
+	text-align: center;
+	width: 6.25vw;
+	position: absolute;
+	height: 1vw;
+	font-size: 0.7vw;
+	margin-left: -3vw;
+	margin-top: 4.5vw;
+	/* background: red; */
+}
+.settings:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+.settings {
+	position: absolute;
+	top: 1vw;
+	transition: opacity .1s;
+	opacity: 0.5;
+	right: 1.4vw;
+	width: 1vw;
+	height: 1vw;
+}
+.blockss:hover {
+	background: #6b6bfa;
+}
+.blockss.active {
+	background: #6b6bfa;
+}
+.blockss {
+	position: relative;
+	top: 0;
+	left: 0;
+	margin-top: 0.3vw;
+	line-height: 3vw;
+	padding-left: 2vw;
+	font-size: 1vw;
+	font-weight: 500;
+	width: 20vw;
+	height: 3vw;
+	background: #23272b;
+}
+.exit {
+	position: fixed;
+	right: 0vh;
+	top: -2.5vw;
+	background: #0e0e1760;
+	width: 7.5vw;
+	z-index: 4;
+	height: 2vw;
+	zoom: 80%;
+	text-align: center;
+	line-height: 2vw;
+	font-weight: 400;
+	font-size: 0.75vw;
+	border-radius: 0.25vw;
+}
+.exit a {
+	width: 2vw;
+	height: 2vw;
+	position: absolute;
+	color: #fff;
+	/* font-family: Montserrat; */
+	left: 0;
+	border-radius: 0.25vw;
+	background: #0e0e1760;
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1D202700;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #06619300 5%, #04487900 100%);
+  border-radius: 10px;
+}	

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="fonts/font/stylesheet.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/infa.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700" rel="stylesheet">
+	<script src="./js/library/vue.js"></script>
+</head>
+
+<body>
+	<div class="main" v-if="active">
+		<div v-if="style != 20" class="name">Навигатор</div>
+		<div v-if="style == 20" class="name">Выбор голоса</div>
+		<div v-if="style == 0" @click="exit()" class="exit">
+			<a>X</a>ВЫЙТИ
+		</div>
+		<div v-if="style != 0" @click="gostyle(0)" class="exit">
+			<a><</a>НАЗАД
+		</div>
+		<div @click="gostyle(20)" class="settings"><img src="./img/settings.svg"></div>
+		<div class="centrized">
+		<div class="list">
+			<div v-if="style == 0" class="list2">
+				<div v-if="style == 0" @click="gostyle(item.styles)" v-on:click="gonav(item.styles)" v-for="(item, index) in navigators" class="block">
+					<img :src='"./img/" + (item.back)'>
+					<a>{{item.name}}</a>
+				</div>
+			</div>
+			<div v-if="style == 2" class="list2">
+				<div v-on:click="gonav(20)" class="block">
+					<img src="./img/arena.svg">
+					<a>Арена</a>
+				</div>
+				<div v-on:click="gonav(21)" class="block">
+					<img src="./img/casino.svg">
+					<a>Казино</a>
+				</div>
+				<div v-on:click="gonav(22)" class="block">
+					<img src="./img/ski.svg">
+					<a>Гора</a>
+				</div>
+				<div v-on:click="gonav(23)" class="block">
+					<img src="./img/drift.svg">
+					<a>Дрифт</a>
+				</div>
+				<div v-on:click="gonav(24)" class="block">
+					<img src="./img/container.svg">
+					<a>Контейнеры</a>
+				</div>
+			</div>
+			<div v-if="style == 6" class="list2">
+				<div v-on:click="gonav(25)" class="block">
+					<img src="./img/cubes.svg">
+					<a>Рынок</a>
+				</div>
+				<div v-on:click="gonav(26)" class="block">
+					<img src="./img/cubes.svg">
+					<a>Свалка</a>
+				</div>
+				<div v-on:click="gonav(27)" class="block">
+					<img src="./img/cubes.svg">
+					<a>Аэропорт</a>
+				</div>
+				<div v-on:click="gonav(28)" class="block">
+					<img src="./img/cubes.svg">
+					<a>Лицензии</a>
+				</div>
+				<div v-on:click="gonav(29)" class="block">
+					<img src="./img/cubes.svg">
+					<a>Аренда транспорта</a>
+				</div>
+				<div v-on:click="gonav(30)" class="block">
+					<img src="./img/cubes.svg">
+					<a>???</a>
+				</div>
+			</div>
+			<div v-if="style == 20" class="list2">
+				<div @click="setvoice(0)" v-bind:class="{ active: btns[0] }" class="blockss">
+					<a>Алиса</a>
+				</div>
+				<div @click="setvoice(1)" v-bind:class="{ active: btns[1] }" class="blockss">
+					<a>Баста</a>
+				</div>
+				<div @click="setvoice(2)" v-bind:class="{ active: btns[2] }" class="blockss">
+					<a>Ольга Бузова</a>
+				</div>
+				<div @click="setvoice(3)" v-bind:class="{ active: btns[3] }" class="blockss">
+					<a>Дарт Вейдер</a>
+				</div>
+				<div @click="setvoice(4)" v-bind:class="{ active: btns[4] }" class="blockss">
+					<a>Артем Дзюба</a>
+				</div>
+				<div @click="setvoice(5)" v-bind:class="{ active: btns[5] }" class="blockss">
+					<a>Гарик Харламов</a>
+				</div>
+				<div @click="setvoice(6)" v-bind:class="{ active: btns[6] }" class="blockss">
+					<a>Mercedes-Benz</a>
+				</div>
+				<div @click="setvoice(7)" v-bind:class="{ active: btns[7] }" class="blockss">
+					<a>Оптимус Прайм</a>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+    <script src="./js/autosale.js"></script>
+	<script src="./js/library/jquery-3.2.1.min.js"></script>
+</body>
+</html>

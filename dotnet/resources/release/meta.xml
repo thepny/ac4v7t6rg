@@ -1,0 +1,5 @@
+﻿<meta>
+  <info name="AlyxMode" type="gamemode"/>
+  <script src="bin/netcoreapp3.1/Alyx.dll"/>
+  <script src="bin/netcoreapp3.1/AlyxSDK.dll"/>
+</meta>
