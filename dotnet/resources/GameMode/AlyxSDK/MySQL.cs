@@ -19,7 +19,7 @@ namespace AlyxSDK
         #region Settings
         private static string _dbHost = "127.0.0.1";
         private static string _dbUser = "alyx";
-        private static string _dbPassword = "Paradine$";
+        private static string _dbPassword = "pw";
         private static string _dbName = "alyx";
         private static string _dbSslMode = "None";
         #endregion
